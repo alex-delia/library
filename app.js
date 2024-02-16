@@ -103,8 +103,19 @@ function displayBooks() {
     }
 }
 
+
+const dialog = document.querySelector("dialog");
+const addBookBtn = document.querySelector('.addBook');
+
+addBookBtn.addEventListener('click', () => {
+    dialog.showModal();
+})
+
+
 const newBookForm = document.querySelector('.newBookForm');
 const rangeValue = document.querySelector('#rangeValue');
+const submitBtn = document.querySelector('.submitBtn');
+const cancelBtn = document.querySelector('.cancelBtn');
 
 newBookForm.addEventListener('submit', (event) => {
     const title = newBookForm.querySelector('#title').value;
@@ -117,22 +128,12 @@ newBookForm.addEventListener('submit', (event) => {
     addBook(book);
     newBookForm.reset();
     rangeValue.innerText = '5';
-})
-
-const dialog = document.querySelector("dialog");
-const addBookBtn = document.querySelector('.addBook');
-const submitBtn = document.querySelector('.submitBtn');
-const cancelBtn = document.querySelector('.cancelBtn');
-
-
-addBookBtn.addEventListener('click', () => {
-    dialog.showModal();
-})
+});
 
 cancelBtn.addEventListener('click', (event) => {
     event.preventDefault();
     newBookForm.reset();
     rangeValue.innerText = '5';
     dialog.close();
-})
+});
 
