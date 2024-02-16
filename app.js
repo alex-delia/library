@@ -131,7 +131,6 @@ newBookForm.addEventListener('submit', (event) => {
 });
 
 cancelBtn.addEventListener('click', (event) => {
-    event.preventDefault();
     newBookForm.reset();
     rangeValue.innerText = '5';
     dialog.close();
