@@ -53,11 +53,12 @@ function displayBooks() {
         const readHeader = document.createElement('span');
         readHeader.textContent = 'Read? ';
         readHeader.classList.add('bookHeader');
-        const read = document.createElement('span');
+        const read = document.createElement('img');
+        read.style.width = '30px';
         if (book.haveRead) {
-            read.textContent = 'Yes'
+            read.src = 'images/check-bold.svg';
         } else {
-            read.textContent = 'No'
+            read.src = 'images/close-thick.svg';
         }
 
         const toggleReadBtn = document.createElement('button');
